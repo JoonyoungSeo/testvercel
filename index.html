@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로또 번호 추첨기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎱 로또 번호 추첨기</h1>
+    <p class="subtitle">1~45 중 6개의 번호를 자동으로 추첨합니다</p>
+
+    <div class="balls-wrapper">
+      <div id="balls" class="balls">
+        <div class="ball placeholder">?</div>
+        <div class="ball placeholder">?</div>
+        <div class="ball placeholder">?</div>
+        <div class="ball placeholder">?</div>
+        <div class="ball placeholder">?</div>
+        <div class="ball placeholder">?</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="drawBtn" class="btn-draw">번호 추첨</button>
+      <button id="resetBtn" class="btn-reset" disabled>초기화</button>
+    </div>
+
+    <div id="history" class="history">
+      <h2>추첨 기록</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #f0c040;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+}
+
+/* 볼 영역 */
+.balls-wrapper {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 28px;
+}
+
+.balls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ball.placeholder {
+  background: #2a2a4a;
+  color: #555;
+  font-size: 1.4rem;
+}
+
+/* 번호 구간별 색상 (실제 로또 색상 기준) */
+.ball.yellow  { background: #f5bc11; }   /* 1~10  */
+.ball.blue    { background: #1e5fcf; }   /* 11~20 */
+.ball.red     { background: #e03a3a; }   /* 21~30 */
+.ball.gray    { background: #888;     }  /* 31~40 */
+.ball.green   { background: #1e9e4f; }   /* 41~45 */
+
+.ball.pop {
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* 버튼 */
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+button:active { transform: scale(0.97); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-draw {
+  background: #f0c040;
+  color: #1a1a2e;
+}
+
+.btn-draw:hover:not(:disabled) { background: #f7d060; }
+
+.btn-reset {
+  background: #444;
+  color: #eee;
+}
+
+.btn-reset:hover:not(:disabled) { background: #555; }
+
+/* 기록 */
+.history {
+  text-align: left;
+}
+
+.history h2 {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #2a2a4a;
+  padding-bottom: 8px;
+}
+
+#historyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background: #16213e;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.history-item .round {
+  font-size: 0.8rem;
+  color: #888;
+  min-width: 28px;
+}
+
+.history-item .mini-ball {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mini-ball.yellow  { background: #f5bc11; }
+.mini-ball.blue    { background: #1e5fcf; }
+.mini-ball.red     { background: #e03a3a; }
+.mini-ball.gray    { background: #888;    }
+.mini-ball.green   { background: #1e9e4f; }
